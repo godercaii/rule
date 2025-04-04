@@ -13,7 +13,7 @@
   
   "dns": {
     "servers": [
-      {"tag": "proxyDns", "address": "8.8.8.8", "address_resolver": "defaultDns", "address_strategy": "ipv4_only", "detour": "🚀 节点选择"},
+      {"tag": "proxyDns", "address": "tls:8.8.8.8", "address_resolver": "defaultDns", "address_strategy": "ipv4_only", "detour": "🚀 节点选择"},
       {"tag": "localDns", "address": "202.96.134.33", "address_resolver": "defaultDns", "address_strategy": "ipv4_only", "detour": "🎯 全球直连"},
       {"tag": "defaultDns", "address": "202.96.134.33", "address_strategy": "ipv4_only", "detour": "🎯 全球直连"}
     ],
@@ -33,7 +33,24 @@
     "type": "tun",
     "address": "172.19.0.1/30",
     "mtu": 9000,
-    "auto_route": true
+    "auto_route": true,
+    "auto_redirect": true,
+    "strict_route": true,
+    "stack": "system",
+    "platform": {
+      "http_proxy": {
+        "enabled": true,
+        "server": "127.0.0.1",
+        "server_port": 2080
+      }
+    }
+  },
+  {
+    "type": "mixed",
+    "listen": "127.0.0.1",
+    "listen_port": 2080,
+    "sniff": true,
+    "users": []
   }
 ],
 
