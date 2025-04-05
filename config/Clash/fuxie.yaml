@@ -14,7 +14,7 @@ external-controller: 0.0.0.0:9090
 secret: ""
 external-ui: "/etc/mihomo/run/ui"
 external-ui-name: zashboard
-external-ui-url: "https://github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
+external-ui-url: "https://git.goder.dpdns.org/github.com/Zephyruso/zashboard/archive/refs/heads/gh-pages.zip"
 
 # 匹配进程 always/strict/off
 find-process-mode: strict
